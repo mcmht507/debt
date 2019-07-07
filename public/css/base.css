@@ -3,3 +3,17 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
+.navbar-list {
+    justify-content: flex-end;
+}
+
+.navbar-item {
+    padding: 0 10px;
+}
+
+.header-text{
+    margin: 20px;
+    text-align: center;
+    font-size: 20px;
+}

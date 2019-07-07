@@ -5,6 +5,9 @@
 @section('content')
 <form class="form-horizontal" method="POST" action="{{ route('login') }}">
     {{ csrf_field() }}
+    <div class="header-text">
+        ログイン
+    </div>
     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
         <label for="email" class="control-label">メールアドレス</label>
         <input id="email" type="email" class="form-control w-100" name="email" value="{{ old('email') }}" required
