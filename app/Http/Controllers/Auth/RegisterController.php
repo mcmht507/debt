@@ -47,13 +47,19 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        // customMessage
+        $messages = [
+            'email.unique' => 'すでに登録されているメールアドレスです。',
+            'password.confirmed'=>'パスワードが一致しません。'
+        ];
+
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'debt' => 'required|numeric',
             'duedate' => 'required|date',
             'password' => 'required|string|min:6|confirmed',
-        ]);
+        ], $messages);
     }
 
     /**

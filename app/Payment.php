@@ -10,7 +10,8 @@ class Payment extends Model
 
     public static $rules = [
         'name'=> 'required|string|max:255',
-        'dueday'=> 'required|numeric|between:1,31',
+        // 'dueday'=> 'required|numeric|between:1,31',
+        'dueday'=> 'duedayrange',
         'debt'=> 'required|numeric',
         'payment'=> 'required|numeric',
     ];

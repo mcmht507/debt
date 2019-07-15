@@ -87,6 +87,7 @@ return [
     'unique'               => 'The :attribute has already been taken.',
     'uploaded'             => 'The :attribute failed to upload.',
     'url'                  => 'The :attribute format is invalid.',
+    'duedayrange' => ':attributeは1〜31を入力してください。',
 
     /*
     |--------------------------------------------------------------------------
@@ -116,6 +117,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'dueday'=>'支払日'
+    ],
 
 ];

@@ -22,7 +22,8 @@
     <div class="form-group{{ $errors->has('date') ? ' has-error' : '' }}">
         <label for="dueday" class="col-md-4 control-label">支払日</label>
 
-        <input id="dueday" type="number" min="1" max="31" class="form-control" name="dueday" value="{{ old('dueday') }}" required>
+        <input id="dueday" type="number" class="form-control" name="dueday" value="{{ old('dueday') }}" required>
+        {{-- <input id="dueday" type="number" min="1" max="31" class="form-control" name="dueday" value="{{ old('dueday') }}" required> --}}
 
         @if ($errors->has('dueday'))
         <span class="help-block">

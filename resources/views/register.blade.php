@@ -13,7 +13,9 @@
 
         @if ($errors->has('name'))
         <span class="help-block">
-            <strong>{{ $errors->first('name') }}</strong>
+            @foreach ($errors->get('name') as $item)
+            <strong>{{ $item }}</strong>
+            @endforeach
         </span>
         @endif
     </div>
@@ -25,7 +27,9 @@
 
         @if ($errors->has('email'))
         <span class="help-block">
-            <strong>{{ $errors->first('email') }}</strong>
+            @foreach ($errors->get('email') as $item)
+            <strong>{{ $item }}</strong>
+            @endforeach
         </span>
         @endif
     </div>
@@ -33,12 +37,13 @@
     <div class="form-group{{ $errors->has('debt') ? ' has-error' : '' }}">
         <label for="debt" class="col-md-4 control-label">借金</label>
 
-        <input id="debt" type="debt" class="form-control" name="debt" value="{{ old('debt') }}" required>
+        <input id="debt" type="number" class="form-control" name="debt" value="{{ old('debt') }}" required>
 
         @if ($errors->has('debt'))
         <span class="help-block">
-            <strong>{{ $errors->first('debt') }}</strong>
-        </span>
+            @foreach ($errors->get('debt') as $item)
+            <strong>{{ $item }}</strong>
+            @endforeach </span>
         @endif
     </div>
 
@@ -49,7 +54,9 @@
 
         @if ($errors->has('duedate'))
         <span class="help-block">
-            <strong>{{ $errors->first('duedate') }}</strong>
+            @foreach ($errors->get('duedate') as $item)
+            <strong>{{ $item }}</strong>
+            @endforeach
         </span>
         @endif
     </div>
@@ -61,7 +68,9 @@
 
         @if ($errors->has('password'))
         <span class="help-block">
-            <strong>{{ $errors->first('password') }}</strong>
+            @foreach ($errors->get('password') as $item)
+            <strong>{{ $item }}</strong>
+            @endforeach
         </span>
         @endif
     </div>
