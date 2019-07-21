@@ -15,8 +15,11 @@ Route::get('/', function () {
 });
 // auth
 Auth::routes();
-Route::get('/index', 'PaymentController@index')->name('index');
+// user
+Route::get('/user', 'UserController@dispUser')->name('user.disp');
+Route::put('/user', 'UserController@update')->name('user.update');
 // pay
+Route::get('/index', 'PaymentController@index')->name('index');
 Route::get('/pay/register', 'PaymentController@dispRegister')->name('pay.dispRegister');
 Route::post('/pay/register', 'PaymentController@register')->name('pay.register');
 Route::post('/pay', 'PaymentController@pay')->name('pay.pay');

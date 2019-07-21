@@ -15,7 +15,7 @@ class CustomValidator extends \Illuminate\Validation\Validator
     public function validateDuedayRange($attribute, $value, $parameters)
     {
         if (1 <= $value && $value <= 31) {
-            return ture;
+            return true;
         }
         return false;
     }

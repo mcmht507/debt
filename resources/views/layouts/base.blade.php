@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
@@ -32,12 +33,26 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li>
+                                <a href="{{ route('index') }}">
+                                    支払い画面
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('pay.dispRegister') }}">
+                                    支払い項目追加
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('user.disp') }}">
+                                    会員情報更新
+                                </a>
+                            </li>
+                            <li>
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                                          document.getElementById('logout-form').submit();">
                                     ログアウト
                                 </a>
-
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                     style="display: none;">
                                     {{ csrf_field() }}
