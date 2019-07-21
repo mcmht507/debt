@@ -5,6 +5,7 @@ $().ready(function () {
         debt = Number(debt);
         $('.currency-filed').text(debt.toLocaleString());
     }
+
     // 支払い押下時
     $('#pay-submit').click(function () {
         // checkbox確認
@@ -41,3 +42,19 @@ $().ready(function () {
         }
     });
 });
+
+const delEvent = (input) => {
+    let id = input.name;
+    let payUrl = '/pay';
+    let token = $('input[name="_token"]')[0].value;
+    $.ajax({
+        url: payUrl,
+        type: 'DELETE',
+        dataType: 'json',
+        data: { id: id, _token: token },
+    }).done(function (data) {
+        window.location = data.url;
+    }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+        alert("削除に失敗しました。");
+    });
+};

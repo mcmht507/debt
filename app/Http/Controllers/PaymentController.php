@@ -65,4 +65,20 @@ class PaymentController extends Controller
         // チェック項目がある借金を支払う
         return ['url' => '/index'];
     }
+
+    /**
+     * debt delete
+     *
+     * @param Request $req
+     * @return void
+     */
+    public function delete(Request $req)
+    {
+        // 削除
+        $id = $req->input('id');
+        $payment = new Payment;
+        $payment->destroy($id);
+        // チェック項目がある借金を支払う
+        return ['url' => '/index'];
+    }
 }

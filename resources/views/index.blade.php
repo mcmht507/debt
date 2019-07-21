@@ -25,6 +25,7 @@
                 <th>金額</th>
                 <th>支払日</th>
                 <th>支払額</th>
+                <th>削除</th>
             </tr>
         </thead>
         <tbody class="pay-tbody">
@@ -37,6 +38,9 @@
                 <td class="pay-debt">{{ $payment->debt }}</td>
                 <td class="pay-dueday">{{ $payment->dueday }}</td>
                 <td class="pay-payment"><input type='number' value="{{ $payment->payment}}"> </td>
+                <td class="pay-payment">
+                <input type='button' value="削除" onclick="delEvent(this);" class="del_btn btn btn-secondary" name="{{ $payment->id}}"> 
+                </td>
             </tr>
             @endforeach
         </tbody>

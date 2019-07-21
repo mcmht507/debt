@@ -20,3 +20,4 @@ Route::get('/index', 'PaymentController@index')->name('index');
 Route::get('/pay/register', 'PaymentController@dispRegister')->name('pay.dispRegister');
 Route::post('/pay/register', 'PaymentController@register')->name('pay.register');
 Route::post('/pay', 'PaymentController@pay')->name('pay.pay');
+Route::delete('/pay', 'PaymentController@delete')->name('pay.delete');
